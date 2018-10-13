@@ -16,16 +16,12 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p> Hamsters are rodents (order Rodentia) belonging to the subfamily Cricetinae, which contains about 25 species classified in six or seven genera. They have become established as popular small house pets, but, because they are easy to breed in captivity, hamsters are also often used as laboratory animals.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p> Hamsters are pessedt szanalmas creatures.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
     </body>
 </html>
